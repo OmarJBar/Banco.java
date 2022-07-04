@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Depositos</title>
+    </h:head>
+    <h:body>
+       
+        <h:form id="deposito">
+
+            <h:panelGrid columns="2">
+
+                <h:outputText value="Ingrese codigo de cuenta"/>
+                <h:inputText value="#{cuentaBean.codigo}" required="true"/>
+
+                <h:outputText value="Ingrese monto a depositar"/>
+                <h:inputText value="#{cuentaBean.aux}" required="true"/>
+                
+                <h:outputText value="#{cuentaBean.respuesta}"/><br/>
+                
+                <h:commandButton actionListener="#{cuentaBean.deposito()}" value="Despositar" />
+                
+                
+
+            </h:panelGrid>
+
+        </h:form>
+        
+         <tr>
+            <p:link value="girar" outcome="giros"/><br/>
+        </tr>
+        
+        <tr>
+            <p:link value="volver" outcome="ingresoCuenta"/><br/>
+        </tr>
+    </h:body>
+</html>
+

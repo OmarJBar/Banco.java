@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Giros</title>
+    </h:head>
+    <h:body>
+        Pagina en Mantencion
+        
+        <h:form id="giro">
+        <h:panelGrid columns="2">
+
+            <h:outputText value="Ingrese codigo de cuenta"/>
+            <h:inputText value="#{cuentaBean.codigo}" required="true"/>
+
+            <h:outputText value="Ingrese monto a girar"/>
+            <h:inputText value="#{cuentaBean.aux}" required="true"/>
+
+            <h:commandButton actionListener="#{cuentaBean.giro()}" value="Despositar" /> <br/>
+            
+            <h:outputText value="#{cuentaBean.respuesta}"/>
+
+        </h:panelGrid>
+
+        </h:form>
+
+        <tr>
+            <p:link value="depositar" outcome="depositos"/><br/>
+        </tr>
+
+        <tr>
+            <p:link value="volver" outcome="ingresoCuenta"/><br/>
+        </tr>
+    </h:body>
+</html>
+
